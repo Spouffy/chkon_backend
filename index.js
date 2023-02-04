@@ -11,12 +11,11 @@ var msg = require('./DATA/msg.json')
 // DATA API request handlers
 app.get('/api/msg', async (req, res, next) => {
     var msg = require('./DATA/msg.json')
-    res.header("Access-Control-Allow-Origin", "*");
 	res.json(msg).status(200).header("Access-Control-Allow-Origin", "*").end()
 })
 app.get('/api/indice', async (req, res, next) => {
     var indice = require('./DATA/indice.json')
-    res.send(indice).status(200).end()
+    res.send(indice).status(200).header("Access-Control-Allow-Origin", "*").end()
 })
 
 app.post('api/msg', async (req, res, next) => {
